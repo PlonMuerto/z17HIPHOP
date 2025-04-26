@@ -1,0 +1,92 @@
+<section class="newProspects">
+    <div class="containerProspects">
+        <h3 class="subtitle">¿Eres el próximo gran artista de hip hop?</h3>
+        <p class="description">Envía tu demo y muestra tu talento al mundo. Estamos buscando las próximas estrellas del hip hop</p>
+        <label class="archivesInput">
+            <span class="textInputProspects">Subir Muestra</span>
+            <input type="file" class="submitArchive"/>
+            <i class="material-icons center icons">publish</i>
+        </label>
+        
+    </div>
+</section>
+
+<style>
+    .newProspects{
+        width: 100%;
+		box-sizing: border-box;
+		padding: 70px 10px 30px;
+		display: grid;
+        place-items: center;
+    }
+
+    .newProspects .containerProspects{
+        width: 96%;
+        background-color: var(--color-yellow);
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        font-family: "Roboto";
+        display: flex;
+		flex-direction: column;
+		align-items: center;
+    }
+
+    .newProspects .containerProspects .subtitle{
+        color: #101010;
+        font-size: 26pt;
+        margin:30px 0 10px;
+        
+    }
+
+    .newProspects .containerProspects .description{
+        color: #101010;
+        font-size: 16pt;
+        margin:10px 0 40px;
+        
+    }
+    .newProspects .containerProspects .archivesInput{
+        width: 200px;
+        height: 40px;
+        position: relative;
+        background-color: #111827;
+        border-radius: 20px;
+        
+    }
+    .newProspects .containerProspects .archivesInput .textInputProspects{
+        position: absolute;
+        display: grid;
+        place-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+    }
+
+    .newProspects .containerProspects .archivesInput .submitArchive{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .newProspects .containerProspects .archivesInput .submitArchive:hover{
+
+    }
+    .newProspects .containerProspects .archivesInput .icons{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+    }
+
+</style>

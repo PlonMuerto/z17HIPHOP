@@ -1,0 +1,63 @@
+
+<aside class="filterMusic">
+    <h3 class="subtitle">Filtros y Ordenación</h3>
+
+        <label class="labelFilter_Order">
+            Ordenar Por:
+            <select>
+                <option>Titulo</option>
+                <option>Artista</option>
+                <option >Año</option>
+            </select>
+        </label>
+        <label class="labelFilter_Order">
+            Filtrar por género:
+            <select>
+                <option>Todos</option>
+                <option>Old School</option>
+                <option >Golden Age</option>
+            </select>
+        </label>
+
+</aside>
+
+<style>
+    .filterMusic{
+        position: absolute;
+        top: 95px;
+        left: 1%;
+        width: 98%;
+        max-width: 1100px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 15px ;
+        background-color: var(--color-background-cards-dark);
+        z-index: 2;
+        font-family: "Roboto";
+        box-shadow: 2px 2px 5px #222222;
+        color:#fff;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .filterMusic .subtitle{
+        font-size: 21pt;
+        width: 100%;
+        margin: 0 0 40px;
+    }
+    .labelFilter_Order{
+        width: 48%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-size: 16pt;
+    }
+    .labelFilter_Order select{
+        margin-top: 10px;
+        outline: none;
+        border: none;
+        background-color: aliceblue;
+        font-size: 16pt;
+        padding: 10px;
+    }
+</style>

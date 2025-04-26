@@ -1,0 +1,144 @@
+---
+import BlogSmallPreview from "../common/blogSmallPreview.astro";
+---
+
+
+<style>
+    .lastedContent{
+        width: 94%;
+        max-width: 1600px;
+		padding:60px 10px 40px;
+        box-sizing: border-box;
+        font-family: "Roboto";
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        grid-template-rows: repeat(3,minmax(310px, auto));
+        grid-template-areas: "principal principal principal" "principal principal principal" "viewTwo viewThree viewFour";
+        gap: 20px 10px;
+
+        @media (max-width:1065px) {
+            &{
+                grid-template-columns: 1fr 1fr ;
+                grid-template-rows: repeat(4,minmax(310px, auto));
+                grid-template-areas: "principal principal " "principal principal" "viewTwo viewThree" "viewFour .";
+            }
+        }
+
+        @media (max-width:720px) {
+            &{
+                grid-template-columns: 1fr  ;
+                grid-template-rows: repeat(4,minmax(310px, auto));
+                grid-template-areas: "principal" "viewTwo" "viewThree" "viewFour";
+            }
+        }
+
+        .subtitle{
+            color: var(--color-white);
+            margin: 15px;
+            font-size: 21pt;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+
+        
+        .destacado{
+            
+            margin: 0;
+            grid-area: principal;
+            width: 100%;
+            max-width: fit-content;
+            box-sizing: border-box;
+            position: relative;
+
+           
+            .imgDestacado{
+                width: 100%;
+            }
+            &:hover{
+                cursor: pointer;
+                .dataCardDestacado .tituloNotaDestacada{
+                    text-decoration: underline;
+                }
+            
+            }
+            .dataCardDestacado{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                bottom: 5%;
+                left: 5%;
+                box-sizing: border-box;
+                max-width: 100%;
+                padding: 15px 10px;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.7);
+                max-height: 100%;
+
+                @media (max-width:720px) {
+                    &{
+                        bottom: 0;
+                        left: 0;
+                        position: relative;
+                    }
+                }
+
+                .tituloNotaDestacada{
+                    margin:0 0 10px;
+                    font-size: 45pt;
+                    color: var(--color-orange);
+
+                }
+
+                .descriptionNotaDestacada{
+                    margin: 0 0 30px;
+                    font-size: 28pt;
+                    color: var(--color-white);
+                }
+                @media (max-width:1500px) {
+                    .tituloNotaDestacada{
+                        font-size: 35pt;
+                    }
+
+                    .descriptionNotaDestacada{
+                        font-size: 22pt;
+                    }
+                }
+                @media (max-width:950px) {
+                    .tituloNotaDestacada{
+                        font-size: 30pt;
+                    }
+
+                    .descriptionNotaDestacada{
+                        font-size: 18pt;
+                    }
+                }
+            }
+        }
+    }
+
+    
+</style>
+
+
+<section class="lastedContent">
+    
+    <h2 class="subtitle">Novedades</h2>
+    <figure class="destacado">
+        <img class="imgDestacado" src="https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/eus9smnmrnk0zsvpvscs" />
+        <div class="dataCardDestacado">
+            <h3 class="tituloNotaDestacada">La mesa Nacional de Hip Hop avanza</h3>
+            <p class="descriptionNotaDestacada">el 27 de mayo se desarrollara la asamble a de la mesa</p>    
+        </div>
+        
+    </figure>
+
+    <BlogSmallPreview src="https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/ybfuqymjcnk4uydp59ph" gridArea="viewTwo"  title="Toñito se viste de juventud" paragraph="el festival de hip hop de la localidad antonio nariño en union a la mesa local de la candelaria" />
+    
+    <BlogSmallPreview src="https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/ph9hs0vwccoyynmuol63" gridArea="viewThree" title="Festival Hip Hop al Centro" paragraph="El Rap se toma La media Torta Nuevamente" />
+    
+    <BlogSmallPreview gridArea="viewFour" title="Vefrank - Dos Esquinas" paragraph="lorem imsum es una prueba sencilla." />
+
+</section>

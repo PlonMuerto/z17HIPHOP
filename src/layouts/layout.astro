@@ -1,0 +1,68 @@
+---
+import { ClientRouter} from "astro:transitions"
+import Header from "./header.astro"
+import Footer from "./footer.astro"
+const {pageTitle, pageDescription} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Permanent+Marker&display=swap&family=Material+Icons&family=Roboto:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap&EB+Garamond:ital,wght@0,400..800;1,400..800" rel="stylesheet">
+		
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={pageDescription}>
+		<title>Z-17 | {pageTitle}</title>
+		<ClientRouter />
+	</head>
+	<body>
+		<header>
+			<Header/>
+		</header>
+		
+		<slot />
+
+		<Footer/>
+	</body>
+</html>
+
+<style is:global>
+	html,
+	body {
+		--color-white:#f3f4f6;
+		--color-yellow:#ffd700;
+		--color-orange:rgb(255, 181, 44);
+		--color-yellow-opacite:#CCA43B;
+		--color-red:#ff4136;
+		--color-grey:#3f3f3f;
+		--color-black:#08090a;
+		--color-silver:rgb(175, 175, 175);
+		--color-blue:#627EA7;
+		--color-card-1:rgba(227,184,144,1);
+		--color-card-2:rgba(190,120,81,1);
+		--color-background-cards-dark:#121313;
+		--cards-gradient:90deg, var(--color-card-1) 0%, var(--color-card-2) 100%;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-black);
+		max-width: 1900px;
+		min-width: 320px;
+	}
+	main{
+		padding-top: 100px;
+	}
+	@media (max-width:865px) {
+		main{
+			padding-top: 143px;
+		}	
+	}
+	header{
+		position: relative;
+	}
+</style>

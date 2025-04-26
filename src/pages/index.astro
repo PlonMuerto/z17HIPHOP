@@ -1,0 +1,69 @@
+---
+//componentes
+import ButtonsAdvertisement from '../components/index/buttonsAdvertisement.astro';
+import Layout from '../layouts/layout.astro';
+import NewProspects from '../components/index/newProspects.astro';
+import Collaborators from "../components/index/collaborators.astro";
+import WelcomeHome from '../components/index/welcomeHome.astro';
+
+//datos
+import advertisement from "../data/indexAdverisement.json"
+import AlertsComponents from '../components/common/AlertsComponents.astro';
+import LastedContents from '../components/index/lastedContents.astro';
+
+const alerts = [{
+			type:"info",
+			title:"Primera sesion, Bienvenido.",
+			paragraph:"bienvenido a la pagina z17, disfrute su navegacion."
+		},{
+			type:"sucess",
+			title:"Despliegue exitoso",
+			paragraph:"bienvenido a la pagina z17, despliege exitoso."
+		},{
+			type:"warning",
+			title:"Preparando alertas nativas",
+			paragraph:"preparando componente nativo con astro"
+		},{
+			type:"error",
+			title:"Pagina sin https",
+			paragraph:"pagina sin ssh ni cortafuegos, peligro"
+		},{
+			type:"chargue",
+			title:"Cargando Datos...",
+			paragraph:"esperando datos usuario"
+		},{
+			type:"crack",
+			title:"Perfil bloqueado",
+			paragraph:"#$d?¨3´3ds"
+		}
+		]
+
+---
+<Layout pageTitle="Inicio" pageDescription="Pagina de Programa z17 de hip hop">
+	<main class="HomePage">
+		
+		<AlertsComponents alerts={alerts} show={false} />
+
+		<WelcomeHome />
+
+		<LastedContents />
+
+		<Collaborators />
+
+		  
+		<NewProspects />
+
+		<ButtonsAdvertisement advertisement={advertisement} />
+
+	</main>
+</Layout>
+
+<style>
+	
+	.HomePage{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+</style>

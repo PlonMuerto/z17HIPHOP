@@ -1,0 +1,20 @@
+---
+const {title, paragraph, src, gridarea = ""} = Astro.params as {title:string, paragraph:string, src:string, gridarea?:string};
+
+---
+<article class:list={["viewArticle",gridarea]}>
+    <figure>
+        <img src={src} />
+    </figure>
+    <h3>{title}</h3>
+    <p>{paragraph}</p>
+</article>  
+
+<style>
+    .viewArticle{
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: red;
+        width: 100%;
+    }
+</style>

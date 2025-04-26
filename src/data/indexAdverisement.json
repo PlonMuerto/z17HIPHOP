@@ -1,0 +1,33 @@
+[
+    {
+        "icon":"play_arrow",
+        "title":"Última Música",
+        "description":"Escucha los ultimos lanzamientos y clasicos"
+    },
+    {
+        "icon":"calendar_today",
+        "title":"Proximos Eventos",
+        "description":"no te pierdas los eventos de hip hop"
+    },
+    {
+        "icon":"photo",
+        "title":"Galeria Urbana",
+        "description":"explora el arte urbano"
+    },
+    {
+        "icon":"group",
+        "title":"Artistas Destacados",
+        "description":"Conoce MCs, DJs y productores que estan cambiando el juego"
+    },
+    {
+        "icon":"newspaper",
+        "title":"Blog y Noticias",
+        "description":"Mantente al dia con las ultimas noticias y opiniones del mundo de hip hop"
+    },
+    {
+        "icon":"mic",
+        "title":"Episodios Programa",
+        "description":"revive los mejores momentos de nuestro programa de radio"
+    }
+
+]

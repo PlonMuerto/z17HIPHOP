@@ -1,0 +1,272 @@
+<footer class="FooterLayout">
+    <div class="bodyFooter">
+        <div class="footerRedesSociales">
+            <h4 class="subtitle">Redes Sociales</h4>
+            <a target="_blank" class="redesLinksFooter" href="https://www.facebook.com/emisorahiphopcandelaria">
+            facebook
+            </a>
+            
+            <a class="redesLinksFooter" href="">face</a>
+            
+            <a class="redesLinksFooter" href="">home</a>
+        </div>
+        <div class="footerEnlaces">
+            <h4 class="subtitle">Enlaces</h4>
+            <a class="enlacesLinks">Inicio</a>
+            <a class="enlacesLinks">Musica</a>
+            <a class="enlacesLinks">Artista</a>
+            <a class="enlacesLinks">Galeria</a>
+            <a class="enlacesLinks">Eventos</a>
+            <a class="enlacesLinks">Contactos</a>
+        </div>
+        <div class="footerDatosContacto">
+            <h4 class="subtitle">Contacto</h4>
+            <span class="datosContacto">
+                <span class="logoContacto">location_on</span>
+                <span class="datoContacto">xxx-xxx xx xx #xx - xx x</span>
+            </span>
+            <span class="datosContacto">
+                <span class="logoContacto">call</span>
+                <span class="datoContacto">+xx xxx xxx xxxx</span>
+            </span>
+            <span class="datosContacto">
+                <span class="logoContacto">mail</span>
+                <span class="datoContacto">xxxxxxxxxxxxx@xxxx.xx</span>
+            </span>
+            <span class="datosContacto">
+                <span class="logoContacto">music_note</span>
+                <span class="datoContacto">Lunes a Sabado: 10am - 5pm</span>
+            </span>
+        </div>
+        <div>
+            <h4 class="subtitle">Newsletter</h4>
+        </div>
+    </div>
+    <div class="tailFooter">
+        <span class="footerCopyright">&#169; 2025 Programa z-17 de Hip Hop. Todos los derechos reservados</span>
+        <div class="tailFooterTermsCtrl">
+            <a class="footerTermsLinks" href="">Politicas de privacidad</a>
+            <a class="footerTermsLinks" href="">Terminos de servicio</a>
+            <a class="footerTermsLinks" href="">Politica de cookies</a>
+        </div>
+    </div>
+
+</footer>
+
+<style>
+    .FooterLayout{
+        font-family: "Roboto";
+        --footerTailHeight:35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--color-background-cards-dark);
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom:calc(var(--footerTailHeight) + 30px);
+    }
+    .FooterLayout .bodyFooter{
+        width: 100%;
+        padding:30px 10px 10px;
+        display: grid;
+        box-sizing: border-box;
+        grid-gap:9px 7px ;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto,4);
+        color: var(--color-white);
+        .subtitle{
+            color:var(--color-yellow-opacite);
+            margin:0 0 20px ;
+            font-size: 14pt;
+            font-weight: 400;
+            width: 100%;
+            
+        }
+
+        .footerRedesSociales{
+            
+            .redesLinksFooter{
+                border-radius: 3px;
+                font-family: "Material Icons";
+                font-size: 22pt;
+                padding: 0;
+                font-weight: lighter;
+                margin: 190px 5px  190px 0;
+                text-decoration: none;
+                color: var(--color-silver);
+                transition: color .2s ease;
+                &:hover{
+                    color:var(--color-yellow-opacite)
+                }
+                &:active{
+                    color:var(--color-yellow)
+                }
+            }
+            
+        }
+        .footerEnlaces{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            .enlacesLinks{
+                display: inline;
+                font-family: "Roboto";
+                font-size: 11pt;
+                font-weight: lighter;
+                margin-top: 2px;
+                margin-bottom: 5px;
+                user-select: none;
+                border-bottom: .5px solid transparent;
+                &:hover{
+                    cursor: pointer;
+                    border-bottom: .5px solid var(--color-yellow-opacite);
+                }
+            }
+            
+        }
+        .footerDatosContacto{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            .datosContacto{
+                display: flex;
+                font-family: "Roboto";
+                font-size: 11pt;
+                font-weight: lighter;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                .logoContacto{
+                    user-select: none;
+                    font-family: "Material Icons";
+                    margin-right: 10px;
+                    font-size: 1.4em;
+                    color:var(--color-yellow)
+                }
+
+               
+            }
+        }
+        div{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (max-width:494px) {
+        .FooterLayout .bodyFooter{
+            .subtitle{
+                font-size: 18pt;
+                margin-bottom: 30px;
+                margin-top: 10px;
+            }
+
+            .footerRedesSociales{
+            
+                .redesLinksFooter{
+                    font-size: 24pt;
+                }
+            }
+
+            .footerEnlaces{
+                .enlacesLinks{
+                    font-size: 14pt;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .footerDatosContacto{
+                .datosContacto{
+                    font-size: 14pt;
+                }
+                .logoContacto{
+                    font-size: 13pt;
+                }
+            }
+        }
+    }
+    @media (min-width:495px){
+        .FooterLayout .bodyFooter{
+            grid-template-columns: repeat(2,calc(50% - 3px));
+            grid-template-rows: repeat(2,2fr);
+        }
+    }
+
+    @media (min-width:1000px){
+        .FooterLayout .bodyFooter{
+        place-items: center;
+        place-content: center;
+            grid-template-columns:  repeat(4,calc(25% - 3px));
+            grid-template-rows: repeat(1,1fr);
+        }
+    }
+
+    /**/
+    .FooterLayout .tailFooter{
+        position: absolute;
+        user-select: none;
+        bottom: 0;
+        padding:20px 0 4px;
+        height: var(--footerTailHeight);
+        width: 98%;
+        font-size: 10pt;
+        left: 1%;
+        border-top:.5px solid var(--color-grey) ;
+        right: 1%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .FooterLayout .tailFooter .footerCopyright{
+        color:var(--color-silver);
+        font-size: .9em;
+    }
+    .FooterLayout .tailFooter .tailFooterTermsCtrl{
+        
+    }
+    .FooterLayout .tailFooter .tailFooterTermsCtrl .footerTermsLinks{
+        margin-left:8px;
+        text-decoration: none;
+        font-size: .8em;
+        padding: 0 0 1px;
+        color: var(--color-yellow-opacite);
+        &:hover{
+            cursor: pointer;
+            border-bottom:1px solid var(--color-yellow-opacite) ;
+        }
+    }
+
+    
+    @media (max-width:765px) {
+        
+        .FooterLayout .tailFooter{
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+        .FooterLayout .tailFooter .tailFooterTermsCtrl{
+            margin-top: 5px;
+            font-size: .8rem;
+        }
+        .FooterLayout .tailFooter .footerCopyright{
+            font-size: .8rem;
+        }
+    }
+    @media (max-width:385px){
+        .FooterLayout .tailFooter{
+            height: calc(var(--footerTailHeight) + 0px);
+        }
+        .FooterLayout .tailFooter .tailFooterTermsCtrl .footerTermsLinks{
+            font-size: .5em;
+            margin-left:3px;
+        }
+
+        .FooterLayout .tailFooter .footerCopyright{
+            font-size: .45rem;
+        }
+    }
+</style>

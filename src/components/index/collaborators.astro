@@ -1,0 +1,55 @@
+---
+import CollaboratorsCard from "../../components/common/CollaboratorsCard.astro"
+import collaborators from "../../data/collaborators.json"
+---
+<section class="collaboratorsIntro">
+        <h2 class="subtitle">Apoyan</h2>
+        <div class="containerArtist">
+          {collaborators.map((coll,i) => (
+            <CollaboratorsCard collaborator={coll}></CollaboratorsCard>
+          ))}
+        </div>
+</section>
+
+<style>
+.collaboratorsIntro{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.collaboratorsIntro .subtitle{
+		align-self: flex-start;
+		color:var(--color-white);
+		font-family: sans-serif;
+		font-size: 1.8rem;
+		margin:20px 3% 0;
+	}
+
+	.collaboratorsIntro .containerArtist{
+		margin-top: 30px;
+		display: grid;
+		width:98%;
+        background-color: #111827;
+        padding: 30px;
+        border-radius: 25px;
+		grid-template-columns: 1fr;
+		gap:40px;
+		grid-template-rows: repeat(auto,1fr);
+		box-sizing: border-box;
+	}
+
+	@media (min-width:705px) {
+		.collaboratorsIntro .containerArtist{
+			grid-template-columns: repeat(2,1fr);
+		}
+	}
+	
+	@media (min-width:1105px) {
+		.collaboratorsIntro .containerArtist{
+			grid-template-columns: repeat(3,1fr);
+		}
+	}
+</style>

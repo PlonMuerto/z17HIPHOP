@@ -1,0 +1,128 @@
+
+<nav class="navigation">
+    
+    <div class="centerContainerNavigation">
+        <a href="/" class="Title">
+            <span class="firstLetters">Programa Z</span><span class="secondLetters">-17</span>
+        </a>
+        <div class="navigation-links-container">
+            <a href="/news" class="linkNavigation">
+                Novedades
+            </a>
+            <a href="/music" class="linkNavigation">
+                Musica
+            </a>
+            <a href="/creators" class="linkNavigation">
+                Artistas
+            </a>
+            <a href="/calendary" class="linkNavigation">
+                Eventos
+            </a>
+            <a href="/play" class="linkNavigation">
+                Galeria
+            </a>
+            <a href="/program" class="linkNavigation">
+                Programa
+            </a>
+            <a href="/shop" class="linkNavigation">
+                Tienda
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navigation{
+        background-image: linear-gradient(180deg,   var(--color-red) 0% 10%, var(--color-black) 11% 100% );
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        box-shadow: 1px 2px 3px #111;
+        padding:26px 20px 20px;
+        box-sizing: border-box;
+        height: 100px;
+        
+    }
+    .navigation .centerContainerNavigation{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+         align-items: center;
+        justify-content: space-between;
+    }
+    .navigation .centerContainerNavigation .Title{
+        font-size:25pt;
+        text-decoration: none;
+        font-family: "Jaro";
+        letter-spacing: 3px;
+        color: var(--color-yellow);
+        cursor: pointer;
+        user-select: text;
+        transition: transform ease-in-out .2s;
+        &:hover{
+            transform: scale(1.04);
+        }
+    }
+    .navigation .centerContainerNavigation .Title .firstLetters{
+        color:#627EA7;
+    }
+    
+    .navigation .centerContainerNavigation .Title .secondLetters{
+        color:#CCA43B;
+    }
+    .navigation .centerContainerNavigation .navigation-links-container{
+        padding: 5px;
+        user-select: none;
+    }
+  
+    
+    .navigation .centerContainerNavigation .navigation-links-container .linkNavigation{
+        font-size: 11pt;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: "Righteous";
+        color:var(--color-white);
+        letter-spacing:1px;
+        margin:0 0 0 8px ;
+        border-radius: .5px;
+        padding:  2px 2px 3px 2px;
+        display: inline-grid;
+        place-items: center;
+        border-bottom: .5px solid transparent;
+        box-sizing: border-box;
+        
+        &:hover{
+            border-color: var(--color-white);
+        }
+    }
+
+    @media (max-width:865px) {
+        
+        .navigation .centerContainerNavigation .navigation-links-container{
+            position: absolute;
+            top:100%;
+            left: 0%;
+            right: 0;
+            padding: 10px;
+            white-space: nowrap;
+            overflow-y: auto;
+            background-color: var(--color-black);
+        }   
+        
+    }
+
+    @media (max-width:465px){
+        .navigation .centerContainerNavigation .navigation-links-container .linkNavigation{
+            font-size: 9pt;
+        }
+    }
+    @media (max-width:395px){
+        .navigation .centerContainerNavigation .Title{
+            font-size: 20pt;
+        }
+    }
+</style>
+

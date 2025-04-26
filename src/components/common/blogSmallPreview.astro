@@ -1,0 +1,65 @@
+---
+const {title, paragraph, src, gridArea} = Astro.props;
+const styleGridArea = gridArea ? { gridArea } : {};
+---
+<article class="viewArticleSmall" style={styleGridArea}>
+    <figure class="imageContainerPreview">
+        <img src={src} />
+    </figure>
+    <h3 class="titlePreview">{title}</h3>
+    <p class="paragraphPreview">{paragraph}</p>
+</article>  
+
+<style>
+    .viewArticleSmall{
+        padding: 5px;
+        box-sizing: border-box;
+        width: 100%;
+        letter-spacing: .5px;
+        .imageContainerPreview{
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            img{
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .titlePreview{
+            color: var(--color-yellow-opacite);
+            font-size: 26pt;
+            margin: 10px 0 0;
+        }
+
+        .paragraphPreview{
+            padding: 0;
+            margin: 8px 0 0;
+            font-size: 16pt;
+            color:var(--color-white);
+        }
+
+        @media (max-width:720px) {
+            .titlePreview{
+                font-size: 30pt;
+                margin: 10px 0 0;
+            }
+
+            .paragraphPreview{
+                padding: 0;
+                margin: 8px 0 0;
+                font-size: 22pt;
+                color:var(--color-white);
+            }
+        }
+
+
+        &:hover{
+            cursor: pointer;
+            .titlePreview{
+                text-decoration: underline;
+            }
+        }
+    }
+</style>

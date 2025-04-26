@@ -1,0 +1,39 @@
+---
+import music from "../../data/music.json"
+---
+
+<table class="music-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Artista</th>
+        <th>Álbum</th>
+        <th>Año</th>
+        <th><i class="material-icons">clock</i></th>
+        <th>BPM</th>
+        <th>Género</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {music.map((track, index) => (
+        <tr>
+          <td>{index + 1}</td>
+          <td class="title-cell">
+            <img src={track.coverArt || "/placeholder.svg"} alt={track.album} class="cover-art" />
+            <span>{track.song}</span>
+          </td>
+          <td>{track.artist}</td>
+          <td>{track.album}</td>
+          <td>{track.year}</td>
+          <td>{track.duration}</td>
+          <td>{track.bpm}</td>
+          <td>{track.genre.join(", ")}</td>
+          <td>
+            <button class="play-btn">▶️</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>

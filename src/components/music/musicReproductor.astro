@@ -1,0 +1,215 @@
+---
+const trackList = [
+  { title: "Canción 1", src: "track1.mp3" },
+  { title: "Canción 2", src: "track2.mp3" },
+  { title: "Canción 3", src: "track3.mp3" }
+];
+
+const trackListClient = JSON.parse(JSON.stringify(trackList));
+let currentTrackIndex = 0;
+let isPlaying = false;
+let audioPlayer;
+
+---
+<!-- @ts-ignore -->
+<script>
+  // Inyectamos la variable del frontmatter
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Creamos y agregamos el elemento audio al DOM
+    audioPlayer = document.createElement("audio");
+    document.body.appendChild(audioPlayer);
+    loadTrack(currentTrackIndex);
+  });
+
+  function loadTrack(index) {
+    if (!audioPlayer) return;
+    currentTrackIndex = index;
+    audioPlayer.src = trackListClient[index].src;
+    document.getElementById("track-title").textContent = trackListClient[index].title;
+    audioPlayer.load();
+    togglePlay();
+  }
+
+  function togglePlay() {
+    if (!audioPlayer) return;
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      document.querySelector(".play-btn").textContent = "⏸ Pause";
+      isPlaying = true;
+    } else {
+      audioPlayer.pause();
+      document.querySelector(".play-btn").textContent = "▶ Play";
+      isPlaying = false;
+    }
+  }
+
+  function prevTrack() {
+    if (currentTrackIndex > 0) loadTrack(currentTrackIndex - 1);
+  }
+
+  function nextTrack() {
+    if (currentTrackIndex < trackListClient.length - 1) loadTrack(currentTrackIndex + 1);
+  }
+
+  // Exponemos las funciones globalmente para que los atributos inline puedan acceder a ellas
+  window.loadTrack = loadTrack;
+  window.togglePlay = togglePlay;
+  window.prevTrack = prevTrack;
+  window.nextTrack = nextTrack;
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+  .player-container {
+    padding: 20px 40px;
+    background: #021f31;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 97px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  .player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .vinyl {
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, #222 0%, #222 57%, #ffb700 99% 100%, #ffb700 100%);
+    border-radius: 50%;
+    animation: spin 4s linear infinite paused;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .grooves {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 6%);
+  }
+
+  .label {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #3d3d3d;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .led {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: red;
+    box-shadow: 0 0 10px red;
+    transition: 0.3s;
+  }
+
+  .playing .vinyl {
+    animation-play-state: running;
+    transform: scale(1.05);
+  }
+
+  .playing .led {
+    background: limegreen;
+    box-shadow: 0 0 10px limegreen;
+    animation: pulse 1s infinite alternate ease-in-out;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    from { box-shadow: 0 0 10px limegreen; }
+    to { box-shadow: 0 0 20px limegreen; }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .control-btn {
+    background: #292929;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  }
+
+  .control-btn:active {
+    transform: scale(0.9);
+    background: #1f1f1f;
+  }
+
+  .control-btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  .play-btn {
+    background: #272727;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .play-btn:hover {
+    background: #0072e6;
+    transform: scale(1.1);
+  }
+</style>
+
+<div class="player-container">
+  <div class="player">
+    <div class="led"></div>
+    <div class="vinyl">
+      <div class="grooves"></div>
+      <div class="label"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn" onclick="prevTrack()">⏮</button>
+    <button class="control-btn play-btn" onclick="togglePlay()">▶ Play</button>
+    <button class="control-btn" onclick="nextTrack()">⏭</button>
+  </div>
+
+  <div id="track-title" style="color:white; margin-top:10px;">{trackList[0].title}</div>
+</div>

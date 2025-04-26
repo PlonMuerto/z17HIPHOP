@@ -1,0 +1,97 @@
+---
+const {collaborator:{id,name,genre,descripcion,image}} = Astro.props;
+---
+
+<div class="collaboratorCard">
+    <figure class="containerImage">
+        <img src={image || "/placeholder.svg"} alt={name} class="rounded-full mx-auto"/>
+    </figure>
+    
+    <div class="information">
+        <h4 class="name">{name}</h4>
+        <span class="job">{genre}</span>
+    </div>
+    
+    <p class="desc">{descripcion}</p>
+    <a href={`/collaborators/${id}`} class="link">
+        Ver perfil
+    </a>
+    
+</div>
+
+<style>
+    .collaboratorCard{
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: stretch;
+        border-radius: 5px;
+        background-color: #1f2937;
+    }
+    .collaboratorCard .containerImage{
+        width: 30%;
+        margin: 0;
+        height: 80px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    
+    .collaboratorCard .containerImage img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .collaboratorCard .information{
+        width: 70%;
+        
+        height: 80px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .collaboratorCard .name{
+        height: 39px;
+        margin:20px  0 0;
+        color:var(--color-yellow-opacite);
+        font-size: 24pt;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-family: "Inter";
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .collaboratorCard .job{
+        display: block;
+        height: 45px;
+        margin: 0;
+        padding-left: 8px;
+        font-size: 8pt;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #b6b6b6;
+        box-sizing: border-box;
+    }
+    .collaboratorCard .desc{
+        color:#dfdfdf;
+        font-family: "Roboto";
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 14pt;
+    }
+    .collaboratorCard .link{
+        text-decoration: none;
+        color:var(--color-blue);
+        font-size: 1.1rem;
+        font-family: "Inter";
+        font-weight: 700;
+        filter: drop-shadow(1px 1px 1.5px var(--color-grey));
+}
+    
+    .collaboratorCard .link:hover{
+        text-decoration: underline;
+        
+    }
+</style>
