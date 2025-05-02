@@ -1,0 +1,105 @@
+---
+import { array } from "astro:schema";
+
+interface contenidosArtistas {
+    name:string;
+    dedicacion:string;
+    url:string;
+    artistName?:string;
+    muestras:string[];
+}
+const artistas:contenidosArtistas[]=[
+    {
+        name:"Anatema",
+        dedicacion:"Rapero, Diseñador",
+        url:"https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/p6exx9w1xakjboxhrxoe",
+        artistName:"DiosPlon",
+        muestras:["mentiras piadosas"]
+    },
+]
+---
+
+<section class="contenedorArtistas">
+    <h2 class="subtitle">Artistas</h2>
+
+    <div class="ArtistasOrder">
+        {
+            artistas.map(artista => <div class="contenedorArtistaIndividual">
+                <figure class="contenedorImagen">
+                    <img src={artista.url} />
+                </figure>
+                <h3 class="name">{artista.name}</h3>
+                <p class="paragraph">{artista.dedicacion}</p>
+
+            </div>)
+        }
+    </div>
+
+</section>
+
+
+<style>
+    .contenedorArtistas{
+        width: 94%;
+        max-width: 1600px;
+		padding:100px 10px 40px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: "Roboto";
+        .subtitle{
+            color: var(--color-white);
+            margin: 15px;
+            font-size: 21pt;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+        .ArtistasOrder{
+            width: 100%;
+            display: grid;
+            place-content: flex-start space-around;
+            
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 400px)); /* Columnas flexibles y fluidas */
+            grid-template-rows: repeat(auto-fit, minmax(110px, 300px)); /* Filas que se ajustan al contenido */
+            grid-gap: 10px 20px; /* Espaciado consistente y ligeramente mayor */
+            place-content: start start; /* Alineación al inicio en el eje transversal y centrado en el eje principal */
+
+
+            .contenedorArtistaIndividual{
+                
+                box-sizing: border-box;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .contenedorImagen{
+                    
+                    width: 130px;
+                    height: 150px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    filter: sepia(1) saturate(2);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .name{
+                    color: var(--color-yellow-opacite);
+                    font-size: 17pt;
+                    margin: 30px 0 0;
+                }
+                .paragraph{
+                    margin: 10px 0 0;
+                    color: var(--color-white);
+                }
+
+            }
+        }
+    }
+</style>

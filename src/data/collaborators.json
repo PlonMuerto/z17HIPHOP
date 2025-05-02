@@ -6,6 +6,12 @@
     "image":"https://scontent.fbog2-4.fna.fbcdn.net/v/t1.6435-9/185104338_3890281454401277_7220561785145842590_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=t81v9JGBSAMQ7kNvgEs4ojd&_nc_zt=23&_nc_ht=scontent.fbog2-4.fna&_nc_gid=AlxZIEe0tW2hOBCfspQ9tHx&oh=00_AYBNCiT71XFf76uBZwBhXkKmyj--bnMJ2f6ILqgkj-M8vQ&oe=67B8FDA5"
 },{
 	"id":2,
+	"name":"Destierro",
+	"genre":"Administrador de contenidos",
+    "descripcion":"Integer scelerisque ut mi sed consequat. Proin auctor egestas sapien ",
+	"image":"https://scontent.fbog2-4.fna.fbcdn.net/v/t1.6435-9/185104338_3890281454401277_7220561785145842590_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=t81v9JGBSAMQ7kNvgEs4ojd&_nc_zt=23&_nc_ht=scontent.fbog2-4.fna&_nc_gid=AlxZIEe0tW2hOBCfspQ9tHx&oh=00_AYBNCiT71XFf76uBZwBhXkKmyj--bnMJ2f6ILqgkj-M8vQ&oe=67B8FDA5"
+},{
+	"id":3,
 	"name":"Anatema",
 	"genre":"Diseño Web",
     "descripcion":"Integer scelerisque ut mi sed consequat. Proin auctor egestas sapien ",

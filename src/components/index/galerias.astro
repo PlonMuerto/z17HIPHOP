@@ -1,28 +1,126 @@
 ---
-const galerias:[{
+interface contenidosGalerias {
     title:string;
     description:string;
     urls:string[];
     creator?:string;
     tags:string[];
-}]=[
+}
+const galerias:contenidosGalerias[]=[
     {
         title:"De la Montaña a la ciudad",
         description:"desde la SA clan, Hasta la colpatria",
-        urls:["",""],
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/p6exx9w1xakjboxhrxoe",""],
         creator:"DiosPlon",
         tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
     },{
-        title:"Les deseamos una Feliz Navidad",
+        title:"Navidad en Rumichaca",
         description:'La celebración de la creacion de la pagina "mibarrioegipto.com"',
-        urls:["",""],
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/qym9ou94edgnb6wpq0wn",""],
+        creator:"DiosPlon",
+        tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
+    },
+    {
+        title:"Yaga Flow",
+        description:'La celebración de la creacion de la pagina "mibarrioegipto.com"',
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/rcro0i1dbwo8bun1lxni",""],
+        creator:"DiosPlon",
+        tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
+    },
+    {
+        title:"La Mesa Local",
+        description:"desde la SA clan, Hasta la colpatria",
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/hbif8k3mtqlnc0oipfmc",""],
+        creator:"DiosPlon",
+        tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
+    },{
+        title:"VeFrank",
+        description:'La celebración de la creacion de la pagina "mibarrioegipto.com"',
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/dg6kb3x6zpwah8gzx1dr",""],
+        creator:"DiosPlon",
+        tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
+    },
+    {
+        title:"Anatema",
+        description:'La celebración de la creacion de la pagina "mibarrioegipto.com"',
+        urls:["https://res.cloudinary.com/magcondosystemsalpha/image/upload/f_auto,q_auto/v1/SACLAN/z1uj6ruuiaonwoclsj1l",""],
         creator:"DiosPlon",
         tags:["hip hop", "Bogota", "Rap" ,"Photografy"]
     }
 ]
 ---
 
-<section>
-    <h2>Galerias</h2>
+<section class="contenedorGalerias">
+    <h2 class="subtitle">Galerias</h2>
+
+    <div class="galeriasOrder">
+        {
+            galerias.map(multimedia => <div class="contenedorGaleriaIndividual">
+                <figure class="contenedorImagen">
+                    <img src={multimedia.urls[0]} />
+                </figure>
+                <h3 class="title">{multimedia.title}</h3>
+                <p>{multimedia.description}</p>
+
+            </div>)
+        }
+    </div>
 
 </section>
+
+
+<style>
+    .contenedorGalerias{
+        width: 94%;
+        max-width: 1600px;
+		padding:60px 10px 40px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: "Roboto";
+        gap: 20px 10px;
+        .subtitle{
+            color: var(--color-white);
+            margin: 15px;
+            font-size: 21pt;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+        .galeriasOrder{
+            width: 100%;
+            
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* Columnas flexibles y fluidas */
+            grid-template-rows: repeat(auto-fit, minmax(310px, auto)); /* Filas que se ajustan al contenido */
+            gap: 10px 20px; /* Espaciado consistente y ligeramente mayor */
+            place-content: start center; /* Alineación al inicio en el eje transversal y centrado en el eje principal */
+
+
+            .contenedorGaleriaIndividual{
+                
+                box-sizing: border-box;
+                .contenedorImagen{
+                    height: calc(100% - 40px);
+                    max-width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    filter: sepia(1) saturate(2);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                }
+                .title{
+                    height: 40px;
+                    color: var(--color-yellow-opacite);
+                    font-size: 17pt;
+                    margin: 10px 0 0;
+                }
+
+            }
+        }
+    }
+</style>

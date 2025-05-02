@@ -11,9 +11,17 @@ import Layout from '../layouts/layout.astro';
 			<FiltersMusic/>
 			<div class="musicIntro">
 				
-				<figure>
-					<img src="/musicPage.png" />
-				</figure>
+				<div class="video-container">
+					<video autoplay  loop playsinline>
+					  <source src="https://res.cloudinary.com/magcondosystemsalpha/video/upload/f_auto:video,q_auto/v1/SACLAN/videos/pydtfgxpbshuz2pqafxw" type="video/mp4" />
+					  Tu navegador no soporta video en HTML5.
+					</video>
+					<div class="video-overlay">
+					  <!-- Aquí puedes poner tu contenido encima del video -->
+					  <h1>404</h1>
+					  <p>No se encuentra Ca	ncion</p>
+					</div>
+				</div>
 			</div>
 		</section>
     </main>
@@ -22,7 +30,6 @@ import Layout from '../layouts/layout.astro';
 <style>
 	.musicPage{
 		width: 100%;
-		padding: 0px;
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
@@ -46,12 +53,51 @@ import Layout from '../layouts/layout.astro';
 	
 	.musicPage .initMusicPage .musicIntro{
 		width: 100%;
-		height: auto;
+		height: 100vh;
 		padding: 0px;
 		margin: 0px;
 		box-sizing: border-box;
 		position: relative;
 		z-index: 1;
+		.video-container {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		}
+
+		.video-container video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: 5;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		filter: brightness(0.8); /* Oscurecer si quieres texto encima */
+		}
+
+		.video-overlay {
+		position: relative;
+		z-index: 2 ;
+		color: #facc15;
+		font-family: 'Arial Black', sans-serif;
+		text-align: center;
+		top: 40%;
+		}
+
+		.video-overlay h1 {
+		font-size: 6rem;
+		margin: 0;
+		}
+
+		.video-overlay p {
+		font-size: 1.5rem;
+		color: #ccc;
+		}
 		
 	}
 
@@ -64,8 +110,8 @@ import Layout from '../layouts/layout.astro';
 		left: -8%;
 		background: repeating-linear-gradient(
 			45deg,
-			rgba(94, 94, 94, 0.9) 0px,
-			rgba(2, 31, 49, 0.1) 3px,
+			rgba(28, 30, 110, 0.836) 0px,
+			rgba(29, 48, 107, 0.1) 3px,
 			rgba(0, 0, 0, 0.1) 6px
 		),repeating-linear-gradient(
 			0deg,
@@ -81,12 +127,14 @@ import Layout from '../layouts/layout.astro';
 		);
 		animation: static-effect 0.2s infinite linear,noise .2s infinite linear;
 		transform-origin: center;
+		z-index: 10;
+		opacity: .5;
 	}
 
 
 	@keyframes static-effect {
 		0% { transform: translateY(0); }
-		100% { transform: translateY(-4px); }
+		100% { transform: translateY(-10px); }
 	}
 
 	@keyframes noise {
@@ -94,16 +142,16 @@ import Layout from '../layouts/layout.astro';
         transform: translateX(0);
       }
       100% {
-        transform: translateX(-10%);
+        transform: translateX(-20%);
       }
     }
 
 	@keyframes move {
       0% {
-        transform: translate(-10%, -10%) scale(1);
+        transform: translate(-10%, -20%) scale(1);
       }
       100% {
-        transform: translate(10%, 10%) scale(1.05);
+        transform: translate(20%, 10%) scale(1.05);
       }
     }
 
