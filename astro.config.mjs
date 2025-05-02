@@ -3,5 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: []
+  site:"https://PlonMuerto.github.io",
+  base:"z17HIPHOP"
 });
